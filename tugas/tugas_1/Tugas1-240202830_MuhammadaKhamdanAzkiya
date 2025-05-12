@@ -1,0 +1,205 @@
+Microsoft Windows [Version 10.0.26100.3915]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\USER>"c:\Windows
+'"c:\Windows' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\USER>Downloads
+'Downloads' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\USER>cd Downloads
+
+C:\Users\USER\Downloads>cd ..
+
+C:\Users\USER>cd Downloads
+
+C:\Users\USER\Downloads>os-202402-main
+'os-202402-main' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\USER\Downloads>cd os-202402-main
+
+C:\Users\USER\Downloads\os-202402-main>os-202402-main
+'os-202402-main' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\USER\Downloads\os-202402-main>cd os-202402-main
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker build -t praktikum-os1234 .
+ERROR: error during connect: Head "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/_ping": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker build -t praktikum-os240202839 .
+ERROR: error during connect: Head "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/_ping": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>>docker build -t praktikum-os240202839 .
+'build' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker build -t praktikum-os240202839 .
+[+] Building 24.0s (7/7) FINISHED                                                                  docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 264B                                                                               0.0s
+ => WARN: ConsistentInstructionCasing: Command 'From' should match the case of the command majority (uppercase) (  0.0s
+ => WARN: ConsistentInstructionCasing: Command 'Run' should match the case of the command majority (uppercase) (l  0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04                                                    3.4s
+ => [auth] library/ubuntu:pull token for registry-1.docker.io                                                      0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [1/2] FROM docker.io/library/ubuntu:22.04@sha256:d80997daaa3811b175119350d84305e1ec9129e1799bba0bd1e3120da3ff  4.5s
+ => => resolve docker.io/library/ubuntu:22.04@sha256:d80997daaa3811b175119350d84305e1ec9129e1799bba0bd1e3120da3ff  0.0s
+ => => sha256:30a9c22ae099393b0131322d7f50d8a9d7cd06c5e518cd27a19ac960a4d0aba3 29.53MB / 29.53MB                   3.7s
+ => => sha256:d80997daaa3811b175119350d84305e1ec9129e1799bba0bd1e3120da3ff52c3 6.69kB / 6.69kB                     0.0s
+ => => sha256:a76d0e9d99f0e91640e35824a6259c93156f0f07b7778ba05808c750e7fa6e68 424B / 424B                         0.0s
+ => => sha256:cc934a90cd99a939f3922f858ac8f055427300ee3ee4dfcd303c53e571d0aeab 2.30kB / 2.30kB                     0.0s
+ => => extracting sha256:30a9c22ae099393b0131322d7f50d8a9d7cd06c5e518cd27a19ac960a4d0aba3                          0.6s
+ => [2/2] RUN apt-get update && apt-get install -y bash nano curl wget iputils-ping procps net-tools              15.0s
+ => exporting to image                                                                                             0.1s
+ => => exporting layers                                                                                            0.1s
+ => => writing image sha256:f1cd2d340351b2b832b69b2b33af0bc22428843dbd929570c62598d6c11ac554                       0.0s
+ => => naming to docker.io/library/praktikum-os240202839                                                           0.0s
+
+ 2 warnings found (use docker --debug to expand):
+ - ConsistentInstructionCasing: Command 'From' should match the case of the command majority (uppercase) (line 2)
+ - ConsistentInstructionCasing: Command 'Run' should match the case of the command majority (uppercase) (line 5)
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker run -it --name praktikum-os240202839 praktikum-os240202839
+root@d7ede5f53450:/# ls -l
+total 56
+lrwxrwxrwx   1 root root    7 Apr  4 02:03 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Apr 18  2022 boot
+drwxr-xr-x   5 root root  360 May  3 06:40 dev
+drwxr-xr-x   1 root root 4096 May  3 06:40 etc
+drwxr-xr-x   2 root root 4096 Apr 18  2022 home
+lrwxrwxrwx   1 root root    7 Apr  4 02:03 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Apr  4 02:03 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root    9 Apr  4 02:03 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root   10 Apr  4 02:03 libx32 -> usr/libx32
+drwxr-xr-x   2 root root 4096 Apr  4 02:03 media
+drwxr-xr-x   2 root root 4096 Apr  4 02:03 mnt
+drwxr-xr-x   2 root root 4096 Apr  4 02:03 opt
+dr-xr-xr-x 396 root root    0 May  3 06:40 proc
+drwx------   2 root root 4096 Apr  4 02:10 root
+drwxr-xr-x   5 root root 4096 Apr  4 02:10 run
+lrwxrwxrwx   1 root root    8 Apr  4 02:03 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4096 Apr  4 02:03 srv
+dr-xr-xr-x  11 root root    0 May  3 06:40 sys
+drwxrwxrwt   1 root root 4096 May  3 06:38 tmp
+drwxr-xr-x   1 root root 4096 Apr  4 02:03 usr
+drwxr-xr-x   1 root root 4096 Apr  4 02:10 var
+root@d7ede5f53450:/#
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>ls -l
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker run -it --name praktikum-os240202839 praktikum-os240202839
+docker: Error response from daemon: Conflict. The container name "/praktikum-os240202839" is already in use by container "d7ede5f534504acdca76ba9a0ac85b3d81de3e25a3bad1c72d55998a84d652bb". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker run -it --name praktikum-os240202839 praktikum-os240202839
+docker: Error response from daemon: Conflict. The container name "/praktikum-os240202839" is already in use by container "d7ede5f534504acdca76ba9a0ac85b3d81de3e25a3bad1c72d55998a84d652bb". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker run -it --name praktikum-os240202839 praktikum-os240202839
+docker: Error response from daemon: Conflict. The container name "/praktikum-os240202839" is already in use by container "d7ede5f534504acdca76ba9a0ac85b3d81de3e25a3bad1c72d55998a84d652bb". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker exec -it praktikum-os240202839 /bin/bash
+Error response from daemon: container d7ede5f534504acdca76ba9a0ac85b3d81de3e25a3bad1c72d55998a84d652bb is not running
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker start -ai praktikum-os240202839
+root@d7ede5f53450:/# apt update && apt install -y stace
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu jammy InRelease
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Hit:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Fetched 257 kB in 2s (134 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package stace
+root@d7ede5f53450:/# strace -e trace=open,read,write ls /etc
+bash: strace: command not found
+root@d7ede5f53450:/# apt update && apt install -y strace
+Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libunwind8
+The following NEW packages will be installed:
+  libunwind8 strace
+0 upgraded, 2 newly installed, 0 to remove and 1 not upgraded.
+Need to get 622 kB of archives.
+After this operation, 2249 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libunwind8 amd64 1.3.2-2build2.1 [54.5 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 strace amd64 5.16-0ubuntu3 [567 kB]
+Fetched 622 kB in 2s (331 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libunwind8:amd64.
+(Reading database ... 5152 files and directories currently installed.)
+Preparing to unpack .../libunwind8_1.3.2-2build2.1_amd64.deb ...
+Unpacking libunwind8:amd64 (1.3.2-2build2.1) ...
+Selecting previously unselected package strace.
+Preparing to unpack .../strace_5.16-0ubuntu3_amd64.deb ...
+Unpacking strace (5.16-0ubuntu3) ...
+Setting up libunwind8:amd64 (1.3.2-2build2.1) ...
+Setting up strace (5.16-0ubuntu3) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.9) ...
+root@d7ede5f53450:/# strace -e trace=open,read,write ls /etc
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+read(3, "nodev\tsysfs\nnodev\ttmpfs\nnodev\tbd"..., 1024) = 478
+read(3, "", 1024)                       = 0
+write(1, "adduser.conf\t\tdefault       host"..., 84adduser.conf                default       hosts          login.defs     pam.conf   rcS.d        sysctl.d
+) = 84
+write(1, "alternatives\t\tdeluser.conf  init"..., 87alternatives                deluser.conf  init.d         logrotate.d    pam.d      resolv.conf  systemd
+) = 87
+write(1, "apt\t\t\tdpkg\t      issue\t     lsb-"..., 71apt                      dpkg          issue          lsb-release    passwd     rmt          terminfo
+) = 71
+write(1, "bash.bashrc\t\te2scrub.conf  issue"..., 95bash.bashrc         e2scrub.conf  issue.net      machine-id     profile    security     update-motd.d
+) = 95
+write(1, "bindresvport.blacklist\tenvironme"..., 94bindresvport.blacklist       environment   kernel         mke2fs.conf    profile.d  selinux      wgetrc
+) = 94
+write(1, "ca-certificates\t\tfstab\t      ld."..., 86ca-certificates            fstab         ld.so.cache    mtab          rc0.d      shadow        xattr.conf
+) = 86
+write(1, "ca-certificates.conf\tgai.conf   "..., 79ca-certificates.conf gai.conf      ld.so.conf     nanorc         rc1.d      shells
+) = 79
+write(1, "cloud\t\t\tgroup\t      ld.so.conf.d"..., 65cloud                     group         ld.so.conf.d   netconfig     rc2.d      skel
+) = 65
+write(1, "cron.d\t\t\tgshadow       ldap\t    "..., 61cron.d                    gshadow       ldap           networks      rc3.d      ssl
+) = 61
+write(1, "cron.daily\t\tgss\t      legal\t    "..., 66cron.daily                gss           legal          nsswitch.conf  rc4.d      subgid
+) = 66
+write(1, "debconf.conf\t\thost.conf     liba"..., 69debconf.conf                host.conf     libaudit.conf  opt           rc5.d      subuid
+) = 69
+write(1, "debian_version\t\thostname      lo"..., 82debian_version              hostname      logcheck       os-release     rc6.d      sysctl.conf
+) = 82
++++ exited with 0 +++
+root@d7ede5f53450:/# exit
+exit
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker tag praktikum-os240202839 mhamdana-os240202839
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker images
+REPOSITORY              TAG       IMAGE ID       CREATED       SIZE
+mhamdana-os240202839    latest    f1cd2d340351   2 hours ago   149MB
+praktikum-os240202839   latest    f1cd2d340351   2 hours ago   149MB
+
+C:\Users\USER\Downloads\os-202402-main\os-202402-main>docker run -it mhamdana-os240202839
+root@696cb289b2e0:/#
