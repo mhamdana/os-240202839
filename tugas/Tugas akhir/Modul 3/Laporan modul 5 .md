@@ -1,8 +1,8 @@
 #📝 Laporan Tugas Akhir
 Mata Kuliah: Sistem Operasi
 Semester: Genap / Tahun Ajaran 2024–2025
-Nama: <Nama Lengkap>
-NIM: <Nomor Induk Mahasiswa>
+Nama: <Muhammad Khamdan Azkiya>
+NIM: <240202839>
 Modul yang Dikerjakan: Modul 5 – Audit dan Keamanan Sistem (xv6-public)
 ---
 
