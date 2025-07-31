@@ -1,10 +1,12 @@
 #📝 Laporan Tugas Akhir
 Mata Kuliah: Sistem Operasi
 Semester: Genap / Tahun Ajaran 2024–2025
-Nama: <Nama Lengkap>
-NIM: <Nomor Induk Mahasiswa>
+```
+Nama: < Muhammad Khamdan Azkiya >
+NIM: <240202839>
 Modul yang Dikerjakan:
 Modul 4 – Subsistem Kernel Alternatif (xv6-public)
+```
 ---
 
 ##📌 Deskripsi Singkat Tugas
@@ -36,50 +38,30 @@ Modul 4 – Subsistem Kernel Alternatif (xv6-public)
 
 Lampirkan hasil uji berupa screenshot atau output terminal. Contoh:
 
-### 📍 Contoh Output `cowtest`:
+###📍 Output Konsol XV6:
 
 ```
-Child sees: Y
-Parent sees: X
-```
-
-### 📍 Contoh Output `shmtest`:
-
-```
-Child reads: A
-Parent reads: B
-```
-
-### 📍 Contoh Output `chmodtest`:
-
-```
+Booting from Hard Disk...xv6...
+cpu1: starting 1
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ chmodtest
 Write blocked as expected
+$ randomtest
+159 114 41 116 67 198 109 232
+$
 ```
-
-Jika ada screenshot:
-
-```
-![hasil cowtest](./screenshots/cowtest_output.png)
-```
-
 ---
 
-## ⚠️ Kendala yang Dihadapi
-
-Tuliskan kendala (jika ada), misalnya:
-
-* Salah implementasi `page fault` menyebabkan panic
-* Salah memetakan alamat shared memory ke USERTOP
-* Proses biasa bisa akses audit log (belum ada validasi PID)
-
+##⚠️ Kendala yang Dihadapi
+ * Ketidaksesuaian Lokasi Deklarasi struct inode pada Instruksi Modul:
+   Instruksi modul awal menyarankan penambahan field mode untuk struct inode di fs.h. Namun, pada lingkungan xv6 yang digunakan, struct inode tidak ditemukan di fs.h (yang justru berisi definisi d_inode atau struktur terkait disk lainnya). Sebaliknya, struct inode yang relevan untuk manipulasi file ditemukan dan didefinisikan di file.h. Kendala ini mengharuskan analisis dan penyesuaian lokasi penambahan field mode secara manual ke file.h agar kompilasi dapat berhasil dan fungsionalitas chmod dapat diimplementasikan dengan benar sesuai struktur kode yang ada di lingkungan spesifik ini. Hal ini menunjukkan pentingnya memahami organisasi header file di xv6 yang digunakan dibandingkan hanya mengikuti instruksi secara langsung.
+   
 ---
 
-## 📚 Referensi
-
-Tuliskan sumber referensi yang Anda gunakan, misalnya:
-
-* Buku xv6 MIT: [https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf](https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf)
-* Repositori xv6-public: [https://github.com/mit-pdos/xv6-public](https://github.com/mit-pdos/xv6-public)
-* Stack Overflow, GitHub Issues, diskusi praktikum
-
+##📚 Referensi
+ * Buku xv6 MIT: https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf
+ * Repositori xv6-public: https://github.com/mit-pdos/xv6-public
+ * Stack Overflow, GitHub Issues, diskusi praktikum 
 ---
