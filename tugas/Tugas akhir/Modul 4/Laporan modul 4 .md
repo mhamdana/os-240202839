@@ -1,46 +1,35 @@
-# 📝 Laporan Tugas Akhir
-
-**Mata Kuliah**: Sistem Operasi
-**Semester**: Genap / Tahun Ajaran 2024–2025
-**Nama**: `<Nama Lengkap>`
-**NIM**: `<Nomor Induk Mahasiswa>`
-**Modul yang Dikerjakan**:
-`(Contoh: Modul 1 – System Call dan Instrumentasi Kernel)`
-
+#📝 Laporan Tugas Akhir
+Mata Kuliah: Sistem Operasi
+Semester: Genap / Tahun Ajaran 2024–2025
+Nama: <Nama Lengkap>
+NIM: <Nomor Induk Mahasiswa>
+Modul yang Dikerjakan:
+Modul 4 – Subsistem Kernel Alternatif (xv6-public)
 ---
 
-## 📌 Deskripsi Singkat Tugas
-
-Tuliskan deskripsi singkat dari modul yang Anda kerjakan. Misalnya:
-
-* **Modul 1 – System Call dan Instrumentasi Kernel**:
-  Menambahkan dua system call baru, yaitu `getpinfo()` untuk melihat proses yang aktif dan `getReadCount()` untuk menghitung jumlah pemanggilan `read()` sejak boot.
+##📌 Deskripsi Singkat Tugas
+ * Modul 4 – Subsistem Kernel Alternatif (xv6-public):
+   Mengimplementasikan system call chmod(path, mode) untuk mengatur mode akses file (read-only atau read-write) dan menambahkan driver pseudo-device /dev/random untuk menghasilkan byte acak.
 ---
 
-## 🛠️ Rincian Implementasi
+##🛠️ Rincian Implementasi
+ * Bagian A – System Call chmod():
+   * Menambahkan field short mode; pada struct inode di file file.h.
+   * Menambahkan system call chmod() dengan nomor SYS_chmod (27) di syscall.h, mendeklarasikannya di user.h, menambahkan entri di usys.S, dan mendaftarkannya di syscall.c.
+   * Mengimplementasikan fungsi sys_chmod() di sysfile.c untuk mengubah nilai ip->mode pada inode file yang dituju, disertai iupdate(ip) untuk persistensi perubahan.
+   * Memodifikasi fungsi filewrite() di file.c untuk mencegah penulisan jika f->ip->mode adalah 1 (read-only).
+   * Membuat program uji chmodtest.c untuk memverifikasi fungsionalitas chmod() dan pencegahan penulisan.
+ * Bagian B – Device Pseudo /dev/random:
+   * Membuat file baru random.c yang berisi fungsi randomread() untuk menghasilkan byte acak.
+   * Mendaftarkan randomread sebagai handler read untuk major device 3 di devsw[] dalam file.c.
+   * Menambahkan panggilan mknod("/dev/random", 1, 3); di init.c untuk membuat device node /dev/random.
+   * Membuat program uji randomtest.c untuk membaca dan menampilkan byte dari /dev/random.
+ * Integrasi Makefile:
+   * Menambahkan _chmodtest dan _randomtest ke daftar UPROGS di Makefile agar program uji dapat dikompilasi.
 
-Tuliskan secara ringkas namun jelas apa yang Anda lakukan:
-
-### Contoh untuk Modul 1:
-
-* Menambahkan dua system call baru di file `sysproc.c` dan `syscall.c`
-* Mengedit `user.h`, `usys.S`, dan `syscall.h` untuk mendaftarkan syscall
-* Menambahkan struktur `struct pinfo` di `proc.h`
-* Menambahkan counter `readcount` di kernel
-* Membuat dua program uji: `ptest.c` dan `rtest.c`
----
-
-## ✅ Uji Fungsionalitas
-
-Tuliskan program uji apa saja yang Anda gunakan, misalnya:
-
-* `ptest`: untuk menguji `getpinfo()`
-* `rtest`: untuk menguji `getReadCount()`
-* `cowtest`: untuk menguji fork dengan Copy-on-Write
-* `shmtest`: untuk menguji `shmget()` dan `shmrelease()`
-* `chmodtest`: untuk memastikan file `read-only` tidak bisa ditulis
-* `audit`: untuk melihat isi log system call (jika dijalankan oleh PID 1)
-
+##✅ Uji Fungsionalitas
+ * chmodtest: untuk menguji chmod() dan memastikan file read-only tidak bisa ditulis.
+ * randomtest: untuk menguji driver pseudo-device /dev/random dan memverifikasi output byte acak.
 ---
 
 ## 📷 Hasil Uji
